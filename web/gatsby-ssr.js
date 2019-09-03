@@ -15,7 +15,12 @@ import { AuthProvider } from "react-use-auth"
 import { client } from "./src/apollo"
 
 export const wrapRootElement = ({ element }) => (
-  <ApolloProvider client={client}>
-    <ThemeProvider theme={theme}>{element}</ThemeProvider>
-  </ApolloProvider>
+  <AuthProvider
+    navigate={navigate}
+    auth0_domain="dev-9wkgkxkl.eu.auth0.com"
+    auth0_client_id="97067nHiw6L9yDbq8Z7DkHo8S4TEwQuL">
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>{element}</ThemeProvider>
+    </ApolloProvider>
+  </AuthProvider>
 )
