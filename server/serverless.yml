@@ -1,9 +1,11 @@
+org: pmudra
+app: fsf
 service: shared-photo-album
 
 provider:
   name: aws
   runtime: nodejs10.x
-  stage: fsf2019
+  stage: dev
   environment:
     ALBUMS_TABLE: ${self:service}-albums-${self:provider.stage}
 
